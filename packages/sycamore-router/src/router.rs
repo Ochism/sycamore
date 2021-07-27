@@ -223,7 +223,7 @@ where
             .collect::<Vec<_>>()
     });
 
-    let template = Signal::new((ReactiveScope::new(),Template::empty()));
+    let template = Signal::new((ReactiveScope::new(), Template::empty()));
     create_effect(cloned!((template) => move || {
         let path = path.get();
         spawn_local(cloned!((render, integration, path, template) => async move {
